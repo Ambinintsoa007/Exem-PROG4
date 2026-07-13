@@ -23,7 +23,7 @@ public class ImageSubmissionController {
   @ResponseStatus(HttpStatus.CREATED)
   public ImageSubmissionResponse submit(
       @RequestParam("file") MultipartFile file, @RequestParam("email") String email) {
-    return imageSubmissionService.submit(file, email);
+    return imageSubmissionService.submit(file, email).response();
   }
 
   @GetMapping("/images")
